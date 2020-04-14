@@ -28,6 +28,7 @@ RUN pip install torchvision-0.3.0-cp37-cp37m-linux_x86_64.whl
 RUN pip install fastai-1.0.58-py3-none-any.whl
 RUN pip install IPython
 
-RUN git clone https://github.com/mogwai/fastai_audio.git && \
+RUN git clone https://github.com/tbass134/fastai_audio.git && \
   cd fastai_audio && \
+  git checkout e8499b72876292b5013f2382a7eef7317aa674e8 && \
   bash install.sh
