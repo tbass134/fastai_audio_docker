@@ -23,6 +23,8 @@ ADD torch-1.1.0-cp37-cp37m-linux_x86_64.whl torch-1.1.0-cp37-cp37m-linux_x86_64.
 ADD torchvision-0.3.0-cp37-cp37m-linux_x86_64.whl torchvision-0.3.0-cp37-cp37m-linux_x86_64.whl
 ADD fastai-1.0.58-py3-none-any.whl fastai-1.0.58-py3-none-any.whl
 
+RUN pip install numba==0.48 librosa
+
 RUN pip install torch-1.1.0-cp37-cp37m-linux_x86_64.whl
 RUN pip install torchvision-0.3.0-cp37-cp37m-linux_x86_64.whl
 RUN pip install fastai-1.0.58-py3-none-any.whl
@@ -30,4 +32,5 @@ RUN pip install IPython
 
 RUN git clone https://github.com/mogwai/fastai_audio.git && \
   cd fastai_audio && \
+  git checkout e8499b72876292b5013f2382a7eef7317aa674e8 && \
   bash install.sh
